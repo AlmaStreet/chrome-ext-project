@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DocuSign 2.0</title>
+  <!-- If using an icon library like Font Awesome, bundle it or reference it in your extension's assets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      min-width: 350px;
+      margin: 0;
+      padding: 0;
+    }
+    #user-info {
+      padding: 10px;
+    }
+    #login-button {
+      margin: 10px;
+      padding: 10px;
+      width: 90%;
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      background: #f0f0f0;
+    }
+    .tab {
+      flex: 1;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-bottom: none;
+    }
+    .tab.active {
+      background: #fff;
+      font-weight: bold;
+    }
+    .content {
+      padding: 10px;
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-7coWXtPW.js"></script>
+</head>
+<body>
+  <!-- User info and authentication (Firebase auth is disabled) -->
+  <div id="user-info">Authentication disabled. Showing main content.</div>
+  <button id="login-button" style="display:none;">Login with Google</button>
+  
+  <!-- Tabs for in/out documents -->
+  <div id="tabs-section">
+    <div class="tabs">
+      <div class="tab active" id="pendingTab">
+        <i class="fa-solid fa-clipboard"></i> Pending Documents
+      </div>
+      <div class="tab" id="signedTab">
+        <i class="fa-solid fa-box"></i> Signed Documents
+      </div>
+    </div>
+    <div id="pendingContent" class="content active">
+      <ul id="pendingList">
+        <!-- Dynamically load pending documents -->
+        <li><i class="fa-solid fa-file"></i> Pending Document 1</li>
+        <li><i class="fa-solid fa-file"></i> Pending Document 2</li>
+      </ul>
+    </div>
+    <div id="signedContent" class="content">
+      <ul id="signedList">
+        <!-- Dynamically load signed documents -->
+        <li><i class="fa-solid fa-file"></i> Signed Document 1</li>
+        <li><i class="fa-solid fa-file"></i> Signed Document 2</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Firebase/auth scripts disabled -->
+  <!-- <script src="firebase-app.js"></script> -->
+  <!-- <script type="module" src="firebase-auth.js"></script> -->
+  
+  <!-- Script for tab switching and main content behavior -->
+</body>
+</html>
