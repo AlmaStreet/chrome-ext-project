@@ -4,33 +4,32 @@
     "version": "1.0",
     "description": "Context-aware contract assistance with a SnowX icon popup.",
     "permissions": [
-        "storage",
-        "activeTab"
+      "storage",
+      "activeTab",
+      "offscreen"
     ],
     "action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "icons/icon16.png",
-            "48": "icons/icon48.png",
-            "128": "icons/icon128.png"
-        }
-    },
-    "background": {
-        "service_worker": "background.js"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "content.js"
-            ]
-        }
-    ],
-    "icons": {
+      "default_popup": "index.html",
+      "default_icon": {
         "16": "icons/icon16.png",
         "48": "icons/icon48.png",
         "128": "icons/icon128.png"
+      }
+    },
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "content_scripts": [
+      {
+        "matches": [ "<all_urls>" ],
+        "js": [ "content.js" ]
+      }
+    ],
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
     }
-}
+  }
+  
